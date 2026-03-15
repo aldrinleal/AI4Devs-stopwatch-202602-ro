@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.stopwatch-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* ── Display ── */
+.display {
+  position: relative;
+  width: 100%;
+  background-color: #e8e8ff;
+  border: 3px solid #333;
+  border-radius: 18px;
+  padding: 20px 30px 36px; /* extra bottom padding for milliseconds */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.display span {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #111;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.separator {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #111;
+  margin: 0 2px;
+  /* slight upward nudge so colons align with digits */
+  align-self: center;
+}
+
+.milliseconds {
+  position: absolute;
+  bottom: 10px;
+  right: 24px;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 22px 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 3px solid #333;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  filter: brightness(0.88);
+  transform: scale(0.97);
+}
+
+.btn-start {
+  background: linear-gradient(180deg, #6be06b 0%, #3cbb3c 100%);
+  color: #111;
+}
+
+.btn-start.running {
+  background: linear-gradient(180deg, #f0c040 0%, #d4a000 100%);
+}
+
+.btn-clear {
+  background-color: #d93a2b;
+  color: #111;
+}
